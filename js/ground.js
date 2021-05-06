@@ -10,8 +10,8 @@ class Ground{
     }
     display(){
       var pos =this.body.position;
-      rectMode(CENTER);
       fill("white");
+      rectMode(CENTER);
     rect(pos.x, pos.y, this.w,this.h);
     }
   };

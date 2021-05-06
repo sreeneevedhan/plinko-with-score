@@ -21,7 +21,7 @@ function setup() {
   createCanvas(800, 800);
   engine = Engine.create();
   world = engine.world;
-  ground = new Ground(width/2,height,width,20);
+  ground = new Ground(400,790,800,20);
   //particle=new Particle(10,10,10);
 
 
@@ -76,6 +76,9 @@ function draw() {
      
      divisions[k].display();
    }
+
+   Point();
+
   if (turn===5){
     gameState="end";
    
@@ -83,7 +86,8 @@ function draw() {
 
   }
    
-   Point();
+  ground.display()
+  
 
    text(200,25,650);
    text(100,105,650);
@@ -113,26 +117,22 @@ function Point(){
 if(particle!=null){
    particle.display();
    
-   if(particle.body.position.y>640)
+   if(particle.body.position.y>770)
    {
-       if(particle.body.position.x<85 && particle.body.position.x>5  || particle.body.position.x<800 && particle.body.position.x>725 ){
-       score=score+200;
-     //  particle=null;
-   }
-   if(particle.body.position.x<165 && particle.body.position.x>85  || particle.body.position.x<725 && particle.body.position.x>645  ||particle.body.position.x<325 && particle.body.position.x>245  || particle.body.position.x<565 && particle.body.position.x>485 ){
-        score=score+100; 
-      //  particle=null;
-   }
-   if(particle.body.position.x<245 && particle.body.position.x>165 || particle.body.position.x<645 && particle.body.position.x>565){
+       if(particle.body.position.x<300){
        score=score+500;
-    //   particle=null;
+       particle=null;
    }
-   if(particle.body.position.x<405 && particle.body.position.x>325  || particle.body.position.x<485 && particle.body.position.x>405){
-       score=score+300;   
-      // particle = null;
+   else if(particle.body.position.x<600 && particle.body.position.x>301 ){
+        score=score+100; 
+        particle=null;
+   }
+   else if(particle.body.position.x<900 && particle.body.position.x>601){
+       score=score+200;
+       particle=null;
    }
 
-   particle=null;
+   
 }
 
  }      

@@ -26,7 +26,5 @@ class Particle {
         ellipse(0, 0, this.r,this.r);
         pop();
     }
-
-    
     
 };
